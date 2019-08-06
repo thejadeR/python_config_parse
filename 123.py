@@ -1,0 +1,27 @@
+import os
+import configparser
+res = os.path.join(os.path.dirname(os.path.abspath(__file__)),"server.cfg")
+print(res)
+
+config = configparser.ConfigParser()
+config.read('server.cfg')
+a = config.get('Server','StatusPath')
+b = config.get('Server','MaxSimulIP')
+print(a)
+print(b)
+print(type(b))
+
+listenPort = config.getint('Server', 'ListenPort')
+mcode = config.get('Server', 'MCode').strip()
+statusPath = config.get('Server', 'StatusPath').strip()
+defaultName = config.get('Server', 'DefaultName').strip()
+defaultTeam = config.get('Server', 'DefaultTeam').strip()
+maxSimulIP = config.getint('Server', 'MaxSimulIP')
+playerMin = config.getint('Match', 'PlayerMin')
+playerCap = config.getint('Match', 'PlayerCap')
+autoStartTime = config.getint('Match', 'AutoStartTime')
+startTimer = config.getint('Match', 'StartTimer')
+enableVoteStart = config.getboolean('Match', 'EnableVoteStart')
+voteRateToStart = config.getfloat('Match', 'VoteRateToStart')
+allowLateEnter = config.getboolean('Match', 'AllowLateEnter')
+worlds = config.get('Match', 'Worlds').strip().split(',')
