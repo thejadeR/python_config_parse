@@ -5,6 +5,8 @@ print(res)
 
 config = configparser.ConfigParser()
 config.read('server.cfg')
+# config.read("server.ini")
+# config.read("server.qwe")
 a = config.get('Server','StatusPath')
 b = config.get('Server','MaxSimulIP')
 print(a)
